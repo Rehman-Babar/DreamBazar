@@ -44,7 +44,7 @@ const ProductSlider = () => {
   };
   return (
     <>
-      <section className="section-deal border-2 absolute translate-y-12 lg:translate-y-56  z-20 flex w-[20rem] px-2 py-4 ml-10 lg:items-center lg:justify-center  glass lg:w-[32rem] hidden md:block ">
+      <section className="section-deal border-2 absolute translate-y-12 lg:translate-y-56  z-20 flex w-[20rem] px-2 py-4 ml-10 lg:items-center lg:justify-center  glass lg:w-[32rem] max-w-[1550px] hidden md:block ">
         <div className="bg-banner-deal">
           <div className="container mx-auto px-4 py-3">
             <div className="flex flex-wrap">
@@ -91,7 +91,7 @@ const ProductSlider = () => {
       </section>
 
       {/* <section> for smaller screen media  </section> */}
-      <section className="block md:hidden glass absolute z-20 mt-36 rounded-sm px-3 py-3 ml-4 font-semibold text-black">
+      <section className="block md:hidden glass absolute z-20 mt-20 rounded-sm px-3 py-3 ml-4 font-semibold text-black">
         <h3>
           40% <span> OFF</span>
         </h3>
@@ -112,13 +112,21 @@ const ProductSlider = () => {
         speed={1000} // Speed of the fade effect
         className="mb-4 mx-auto max-w-[1550px] z-10">
         <SwiperSlide className="w-full">
-          <img src="/deal/bg-deal-2.jpg" alt="Deal 2" className="w-full h-[20rem]  md:h-[25rem] lg:h-[40rem]" />
+          <img
+            src="/deal/bg-deal-2.jpg"
+            alt="Deal 2"
+            className="w-full h-[12rem] sm:h-[17rem]  md:h-[25rem] lg:h-[40rem]"
+          />
         </SwiperSlide>
         <SwiperSlide className="w-full">
-          <img src="/deal/bg-deal-3.jpg" alt="Deal 3" className="w-full h-[20rem]  md:h-[25rem] lg:h-[40rem]" />
+          <img
+            src="/deal/bg-deal-3.jpg"
+            alt="Deal 3"
+            className="w-full h-[12rem] sm:h-[17rem] md:h-[25rem] lg:h-[40rem]"
+          />
         </SwiperSlide>
         <SwiperSlide className="w-full">
-          <img src="/deal/bg-deal.jpg" alt="Deal" className="w-full h-[20rem]  md:h-[25rem] lg:h-[40rem]" />
+          <img src="/deal/bg-deal.jpg" alt="Deal" className="w-full h-[12rem] sm:h-[17rem] md:h-[25rem] lg:h-[40rem]" />
         </SwiperSlide>
       </Swiper>
     </>
