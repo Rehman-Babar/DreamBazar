@@ -128,7 +128,9 @@ const Navbar2 = () => {
           <div className="flex space-x-4 lg:hidden">
             <FaUser className="text-black" size={20} />
             <FaHeart className="text-black" size={20} />
-            <FaShoppingCart className="text-black" size={20} />
+            <Link to={"/cart"}>
+              <FaShoppingCart className="text-black" size={20} />
+            </Link>
           </div>
         </div>
 

@@ -66,7 +66,7 @@ const Carousel = () => {
           key={index}
           className={`carousel-slide ${slide.align}-align ${index === activeSlide ? "active" : ""} ${
             slide.ml ? "bg2-img" : ""
-          } px-8`}
+          } px-5`}
           style={{
             display: index === activeSlide ? "flex" : "none",
             // displmargay: index === activeSlide ? "flex" : "none",
@@ -83,15 +83,18 @@ const Carousel = () => {
                 {slide.heading.split("<br>").map((text, i) => (
                   <div
                     key={i}
-                    className={`${slide.text ? " first-title max-w-80 mb-3" : ""} ${
+                    className={`${slide.text ? " first-title max-w-80 " : ""} ${
                       slide.ml ? "for-lg" : ""
-                    } mb-3 text-3xl`}>
+                    }  text-lg md:text-3xl`}>
                     {text}
                   </div>
                 ))}
               </strong>
             </h1>
-            <p className={`${slide.text ? "first-title" : ""} ${slide.ml ? "for-lg" : ""} mb-3 text-2xl`}>
+            <p
+              className={`${slide.text ? "first-title" : ""} ${
+                slide.ml ? "for-lg" : ""
+              }  text-[1.5rem] md:text-2xl leading-4 mb-1`}>
               {slide.description}
             </p>
             <button className={`view-collection-btn ${slide.ml ? "for-lg btn-sm" : ""} `}>{slide.btnText}</button>
