@@ -64,9 +64,9 @@ const Carousel = () => {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`carousel-slide ${slide.align}-align ${index === activeSlide ? "active" : ""} ${
+          className={`carousel-slide ${slide.align}-align ${index === activeSlide ? "active" : ""}  ${
             slide.ml ? "bg2-img" : ""
-          } px-5`}
+          } px-5 `}
           style={{
             display: index === activeSlide ? "flex" : "none",
             // displmargay: index === activeSlide ? "flex" : "none",
@@ -77,7 +77,7 @@ const Carousel = () => {
           }}>
           .
           <div className={`content ${slide.align}-align ${("xl:", slide.ml)} ${slide.ml ? "for-lg" : ""}`}>
-            <h3 className={` ${slide.text ? "first-title  mb-3 for-lg" : ""} mb-3 text-5xl`}>{slide.title}</h3>
+            <h3 className={` ${slide.text ? "first-title  mb-3 for-lg" : ""} mb-3 md:mb-6 text-5xl`}>{slide.title}</h3>
             <h1>
               <strong>
                 {slide.heading.split("<br>").map((text, i) => (
@@ -85,7 +85,7 @@ const Carousel = () => {
                     key={i}
                     className={`${slide.text ? " first-title max-w-80 " : ""} ${
                       slide.ml ? "for-lg" : ""
-                    }  text-lg md:text-3xl`}>
+                    }  text-lg md:text-4xl md:md:mb-6`}>
                     {text}
                   </div>
                 ))}
@@ -94,7 +94,7 @@ const Carousel = () => {
             <p
               className={`${slide.text ? "first-title" : ""} ${
                 slide.ml ? "for-lg" : ""
-              }  text-[1.5rem] md:text-2xl leading-4 mb-1`}>
+              }  text-[1.5rem] md:text-2xl leading-4 mb-1 md:mb-3`}>
               {slide.description}
             </p>
             <button className={`view-collection-btn ${slide.ml ? "for-lg btn-sm" : ""} `}>{slide.btnText}</button>
