@@ -30,8 +30,6 @@ const ProductCard = ({
   const wishlist = useSelector((state) => state.wishlist.wishlistItems);
   const isInWishlist = wishlist.some((item) => item.id === id);
 
-  console.log("wishlist", wishlist);
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -66,6 +64,9 @@ const ProductCard = ({
     }
   };
 
+  // Ensure rating is within valid bounds (0 to 5)
+  const validatedRating = Math.max(0, Math.min(5, Math.floor(rating || 0)));
+
   return (
     <div>
       <div
@@ -84,7 +85,7 @@ const ProductCard = ({
               {discount} off
             </span>
           )}
-          {unitsInStock && (
+          {!unitsInStock && (
             <span className="absolute top-2 right-2 bg-gray-800 text-white text-xs font-semibold px-2 py-1 rounded">
               Sold out
             </span>
@@ -94,11 +95,11 @@ const ProductCard = ({
           <h3 className="text-lg font-semibold">{productName}</h3>
           <div className="flex items-center mt-1 mb-2">
             <div className="flex text-yellow-400">
-              {[...Array(rating)].map((_, i) => (
-                <i key={i} className="ri-star-fill"></i>
+              {[...Array(validatedRating)].map((_, i) => (
+                <i key={`filled-${i}`} className="ri-star-fill"></i>
               ))}
-              {[...Array(5 - rating)].map((_, i) => (
-                <i key={i} className="ri-star-line"></i>
+              {[...Array(5 - validatedRating)].map((_, i) => (
+                <i key={`empty-${i}`} className="ri-star-line"></i>
               ))}
             </div>
             <span className="text-xs text-gray-500 ml-2">({reviews})</span>

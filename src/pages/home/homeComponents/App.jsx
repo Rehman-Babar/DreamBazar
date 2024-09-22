@@ -73,6 +73,7 @@ const Carousel = () => {
             backgroundImage: `url(${slide.image})`, // Set background image here
             backgroundSize: "cover", // Ensure the image covers the slide
             backgroundPosition: "center",
+            overflowX: "auto",
           }}>
           .
           <div className={`content ${slide.align}-align ${("xl:", slide.ml)} ${slide.ml ? "for-lg" : ""}`}>
