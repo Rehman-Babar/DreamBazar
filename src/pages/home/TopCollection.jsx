@@ -151,7 +151,7 @@ const TopCollection = () => {
     <>
       {/* <nav></nav> */}
 
-      <div className="flex  flex-col md:flex-row md:justify-between md:items-center pt-10 pb-6 px-10 md:px-28">
+      <div className="flex  flex-col md:flex-row md:justify-between md:items-center pt-10 pb-6 pl-3 md:px-28">
         <div className="flex flex-col items-start mb-2">
           <h1 className="text-3xl font-bold mb-2">Top Collection</h1>
           <p className="text-gray-800">Shop online for top collection and get free shipping!</p>
@@ -181,7 +181,7 @@ const TopCollection = () => {
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 px-16 md:px-24">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 md:px-24">
         {filteredProducts.map((product, index) => (
           <div key={index} className="px-2">
             <CollectionCard {...product} />
