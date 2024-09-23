@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white p-5 border-b-2 px-12 max-w-[1250px] mx-auto font-poppins">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white p-5 border-b-2 md:px-12 max-w-[1250px] mx-auto font-poppins">
+      <div className="max-w-7xl mx-auto md:px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between h-16">
           <div className="flex items-center">
             <a href="/" className="flex-shrink-0">
@@ -23,7 +23,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search For items..."
-                className="w-full border border-red-400 py-2 px-[-20px] md:px-4 rounded-md"
+                className="w-full border border-red-400 py-2  md:px-4 rounded-md"
               />
               <select className="absolute hidden md:block inset-y-0 right-16 bg-white border border-red-400  ">
                 <option>All</option>
@@ -38,10 +38,10 @@ const Navbar = () => {
           </div>
           <div className="hidden  lg:flex items-center lg:space-x-4">
             <div className="relative group flex">
-              <a href="/account" className="text-gray-800 flex items-center gap-2  font-poppins">
+              <Link to={"/signin"} className="text-gray-800 flex items-center gap-2  font-poppins">
                 <FaRegUser className="w-5 h-5" />
                 <span>Account</span>
-              </a>
+              </Link>
               {/* Dropdown on hover */}
               <div className="absolute left-0 mt-8 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-200">
                 <ul className="py-2">
@@ -51,9 +51,9 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/settings" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                      Settings
-                    </a>
+                    <Link to={"/signin"} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                      Register
+                    </Link>
                   </li>
                   <li>
                     <a href="/logout" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
